@@ -21,7 +21,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html"> <i class="fas fa-home"></i> Home</a>
+          <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
         </li>
         <li class="breadcrumb-item active">About</li>
       </ol>
@@ -77,7 +77,7 @@
     aperiam, unde aliquid at similique!
   </h4>
   <hr />
-  <a href="listing.html" class="btn btn-secondary text-white btn-lg"
+  <a href="{% url 'listings' %}" class="btn btn-secondary text-white btn-lg"
     >View Our Featured Listings</a
   >
 </section>

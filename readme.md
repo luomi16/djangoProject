@@ -1,3 +1,5 @@
+A Real Estate website built using Django, PostgreSQL and Bootstrap.
+
 ## How to run this code locally
 
 1. clone this project to your local folder `git clone `
