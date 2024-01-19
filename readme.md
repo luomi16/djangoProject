@@ -1,4 +1,4 @@
-A Real Estate website built using Django, PostgreSQL and Bootstrap.
+## A Real Estate website built using Django, PostgreSQL and Bootstrap.
 
 ## How to run this code locally
 
