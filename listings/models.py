@@ -11,7 +11,7 @@ class Listing(models.Model):  # extends the core model
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=20)
     description = models.TextField(blank=True)  # means that it's optional
-    price = models.IntegerFieldField()
+    price = models.IntegerField()
     bedrooms = models.IntegerField()
     # less than 100 bathrooms, 1.5
     bathrooms = models.DecimalField(max_digits=2, decimal_places=1)

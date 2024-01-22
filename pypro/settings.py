@@ -80,7 +80,7 @@ WSGI_APPLICATION = "pypro.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'pyprodb',
+        "NAME": 'pypro',
         "USER": 'postgres',
         "PASSWORD": '123456',
         'HOST': 'localhost'
