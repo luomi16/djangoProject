@@ -26,7 +26,7 @@ class Listing(models.Model):  # extends the core model
     photo_5 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     is_published = models.BooleanField(default=True)
-    list_data = models.DateField(default=datetime.now, blank=True)
+    list_date = models.DateField(default=datetime.now, blank=True)
     # pick a field (title) to be a main field to be display
 
     def __str__(self):
