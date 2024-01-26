@@ -35,7 +35,7 @@
                 <option selected="true" disabled="disabled">State (All)</option>
                 {% for key,value in state_choices.items %}
                 <option value="{{ key }}"
-                {% if key == values.state %}
+                {% if key == values.state %} 
                   selected
                 {% endif %}
                 >{{ value }}</option>
@@ -121,8 +121,7 @@
             <div class="listing-heading text-center">
               <h4 class="text-primary">{{ listing.title }}</h4>
               <p>
-                <i class="fas fa-map-marker text-secondary"></i> {{
-                listing.city }}, {{ listing.state }} {{ listing.zipcode }}
+                <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }},  {{ listing.state }} {{ listing.zipcode }}
               </p>
             </div>
             <hr />
