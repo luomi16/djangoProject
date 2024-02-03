@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from listings.choices import bedroom_choices, price_choices, state_choices
 
 from listings.models import Listing

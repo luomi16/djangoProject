@@ -60,7 +60,7 @@ def search(request):
         'price_choices': price_choices,
         'state_choices': state_choices,
         'listings': queryset_list,
-        'values': request.GET
+        'values': request.GET  # preserving form input
     }
     return render(request, 'listings/search.html', context)
 
