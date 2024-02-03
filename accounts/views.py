@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def login(request):
     if request.method == 'POST':
         # Login user
-        return
+        messages.error(request, 'Testing error')
+        return redirect('login')
     else:
         return render(request, 'accounts/login.html')
 
