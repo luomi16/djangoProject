@@ -1,5 +1,10 @@
 ## A Real Estate website built using Django, PostgreSQL and Bootstrap.
 
+# Main functions:
+
+Search your ideal house using powerful search feature
+OAuth Login supported, including Google, GitHub.
+
 ## How to run this code locally
 
 1. clone this project to your local folder `git clone `

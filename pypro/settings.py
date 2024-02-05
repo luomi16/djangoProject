@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    "oauthlogin",
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "pypro.urls"
@@ -143,4 +145,16 @@ MEDIA_URL = '/media/'
 # Messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
+}
+
+# Auth
+
+OAUTH_LOGIN_PROVIDERS = {
+    "github": {
+        "class": "accounts.oauth.GitHubOAuthProvider",
+        "kwargs": {
+            "client_id": "b22a3427ea051673c845",
+            "client_secret": "07ff852700247c4e9c177a6c82a432e710c51693",
+        },
+    },
 }
