@@ -6,6 +6,10 @@ from listings.models import Listing
 from realtors.models import Realtor
 
 
+def page_not_found_view(request, exception):
+    return render(request, '404.html', {}, status=404)
+
+
 def index(request):
     listings = Listing.objects.order_by(
         '-list_date').filter(is_published=True)[:3]

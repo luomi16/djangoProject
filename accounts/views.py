@@ -68,3 +68,25 @@ def logout(request):
 
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
+
+
+def updatepsw(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        new_password = request.POST.get('password')
+
+        if not User.objects.filter(username=username).exists():
+            messages.error(
+                request, 'That username do not exist, please try again')
+            return redirect('updatepsw')
+        else:
+            # todo: update user password
+            user = User.objects.get(username=username)
+            user.set_password(new_password)  # 更新密码
+            user.save()
+            # update_session_auth_hash(request, user)  # 重要：更新session以防止用户登出
+            messages.success(
+                request, 'Your password has been updated successfully!')
+            return redirect('login')  # 假设有一个名为'login'的URL用于登录
+    else:
+        return render(request, 'accounts/updatepsw.html')
