@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from utils.exceptions.logger import get_logger
+# from pswValidator import CustomPasswordValidator
+
+logger = get_logger(__name__)
 
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST.get('username')  # Using .get() is safer
+        username = request.POST.get('username')
         password = request.POST.get('password')
 
         user = auth.authenticate(username=username, password=password)
@@ -71,6 +75,8 @@ def dashboard(request):
 
 
 def updatepsw(request):
+    logger.error(
+        "This is a error level log information. User try to update password.")
     if request.method == 'POST':
         username = request.POST.get('username')
         new_password = request.POST.get('password')
@@ -87,6 +93,6 @@ def updatepsw(request):
             # update_session_auth_hash(request, user)  # 重要：更新session以防止用户登出
             messages.success(
                 request, 'Your password has been updated successfully!')
-            return redirect('login')  # 假设有一个名为'login'的URL用于登录
+            return redirect('login')
     else:
         return render(request, 'accounts/updatepsw.html')
